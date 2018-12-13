@@ -22,23 +22,32 @@ final class EditorControl {
   }
 
   public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
-	  int breite, hohe;
+
+	  Figur f = null;
+	  int w = zweiterPunkt.x > ersterPunkt.x ? zweiterPunkt.x - ersterPunkt.x : ersterPunkt.x - zweiterPunkt.x;
+	  int h = zweiterPunkt.y > ersterPunkt.y ? zweiterPunkt.y - ersterPunkt.y : ersterPunkt.y - zweiterPunkt.y;
+	  int x = zweiterPunkt.x > ersterPunkt.x ? ersterPunkt.x : zweiterPunkt.x;
+	  int y = zweiterPunkt.y > ersterPunkt.y ? ersterPunkt.y - 25 : zweiterPunkt.y - 25;
 	  
-	  breite = zweiterPunkt.x - ersterPunkt.x;
-	  hohe = zweiterPunkt.y - ersterPunkt.y;
-	  int x = ersterPunkt.x;
-	  int y = ersterPunkt.y;
+	  switch(figurTyp) {
 	  
-	  if(ersterPunkt.x > zweiterPunkt.x) {
-		  
-		  x = zweiterPunkt.x;
-	  } else  
-	  if(ersterPunkt.y > zweiterPunkt.y) {
-		  y = zweiterPunkt.y;
+	  case 'r':
+		  f = new Rechteck(x, y, w, h);
+		  break;
+	  case 'k':
+		  f = new Kreis(x, y, w);
+		  break;
+	  case 'l':
+		  f = new Linie(ersterPunkt.x, ersterPunkt.y - 25, zweiterPunkt.x, zweiterPunkt.y - 25);
+	  case 't':
+		  f = new Text(zweiterPunkt.x, zweiterPunkt.y, EditorFrame.text);
+	  default:
+		  break;
 	  }
 	  
-	  zeichnung.hinzufuegen(new Rechteck(zweiterPunkt.x, zweiterPunkt.y, Math.abs(breite), Math.abs(hohe)));
-	  
+	  if(f != null) {
+		zeichnung.hinzufuegen(f);
+	  }
   }
 }
 

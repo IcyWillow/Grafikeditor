@@ -1,4 +1,6 @@
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
@@ -18,4 +20,5 @@ final class EditorPanel extends JPanel  {
     super.paintComponent(g);
     editorControl.allesNeuZeichnen(g);
   }
+
 }

@@ -11,7 +11,6 @@ public class Text extends Figur {
 	}
 	
 	public String getText() {
-		
 		return this.text;
 	}
 

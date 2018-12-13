@@ -14,32 +14,19 @@ public class Zeichnung {
 		for (Figur f : figuren) {
 			f.zeichne(g);
 		}
-		
 	
 	}
 	
-	  /**
-	   * F�gt eine weitere Figur hinzu und l�st die Auffrischung des Fensterinhaltes aus.
-	   * @param figur Referenz auf das weitere Figur-Objekt.
-
-       */
 	
 	  public void hinzufuegen(Figur figur) {
 	    figuren.add(figur);
 	    
 	   
 	  }
-
-	  /**
-	   * L�scht alle Figuren und l�st die Auffrischung des Fensterinhaltes aus.
-
-	  public void allesLoeschen() {
-	    figuren.clear();
-	    repaint();
+	  
+	  public void entfernen() {
+		  figuren.clear();
+		  
 	  }
-	$
-	public void move(int dx, int dy) {
-		
-		
-	}*/
+
 }
