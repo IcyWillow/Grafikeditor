@@ -8,7 +8,8 @@ final class EditorControl {
   
 
   public void allesNeuZeichnen(Graphics g) {
-    //TODO: Ergänzen
+   
+	  zeichnung.zeichneFiguren(g);
 	
   }
 
@@ -21,7 +22,23 @@ final class EditorControl {
   }
 
   public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
-    //TODO: Ergänzen
+	  int breite, hohe;
+	  
+	  breite = zweiterPunkt.x - ersterPunkt.x;
+	  hohe = zweiterPunkt.y - ersterPunkt.y;
+	  int x = ersterPunkt.x;
+	  int y = ersterPunkt.y;
+	  
+	  if(ersterPunkt.x > zweiterPunkt.x) {
+		  
+		  x = zweiterPunkt.x;
+	  } else  
+	  if(ersterPunkt.y > zweiterPunkt.y) {
+		  y = zweiterPunkt.y;
+	  }
+	  
+	  zeichnung.hinzufuegen(new Rechteck(zweiterPunkt.x, zweiterPunkt.y, Math.abs(breite), Math.abs(hohe)));
+	  
   }
 }
 

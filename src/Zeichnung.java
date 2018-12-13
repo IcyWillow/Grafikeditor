@@ -8,9 +8,6 @@ public class Zeichnung {
 	private List<Figur> figuren = new ArrayList<Figur>();
 
 	
-	public Zeichnung() {
-		
-	}
 	
 	public void zeichneFiguren(Graphics g)
 	{
@@ -18,6 +15,7 @@ public class Zeichnung {
 			f.zeichne(g);
 		}
 		
+	
 	}
 	
 	  /**

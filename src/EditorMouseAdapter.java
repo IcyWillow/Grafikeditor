@@ -11,6 +11,7 @@ public class EditorMouseAdapter extends MouseAdapter {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		System.out.println(e.getPoint());
+		
 	}
 	
 
