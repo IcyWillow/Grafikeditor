@@ -30,8 +30,14 @@ public class Linie extends Figur {
 
 	@Override
 	public void zeichne(Graphics g) {
-		
 		 g.drawLine(x, y, endeX, endeY);
+	}
+
+	@Override
+	public void resize(int x, int y, int w, int h) {
+		this.endeX = x;
+		this.endeY = y;
+		
 	}
 
 }

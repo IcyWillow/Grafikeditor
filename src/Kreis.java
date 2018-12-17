@@ -19,6 +19,14 @@ public class Kreis extends Figur {
 		  g.drawOval(x, y, radius, radius);
 		
 	}
+	
+	@Override
+	public void resize(int x, int y, int w, int h) {
+		this.x = x;
+		this.y = y;
+		this.radius = w;
+		
+	}
 
 
 }

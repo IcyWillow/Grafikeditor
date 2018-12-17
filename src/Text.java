@@ -21,4 +21,9 @@ public class Text extends Figur {
 	}
 
 	
+	@Override
+	public void resize(int x, int y, int w, int h) {
+	
+	}
+	
 }

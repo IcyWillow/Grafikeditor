@@ -19,6 +19,15 @@ public class Rechteck extends Figur {
 	
 		return this.hoehe;
 	}
+	
+	@Override
+	public void resize(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.breite = width;
+		this.hoehe = height;
+	}
+	
 
 	@Override
 	public void zeichne(Graphics g) {
