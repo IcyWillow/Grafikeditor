@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JToolBar;
 
 @SuppressWarnings("serial")
-final class EditorFrame extends JFrame implements MouseListener, KeyListener, MouseMotionListener  {
+final class EditorFrame extends JFrame implements MouseListener, MouseMotionListener, KeyListener  {
   private EditorControl editorControl = new EditorControl();
   private JToolBar t = new JToolBar("Test"); 
   private JMenuBar m = new JMenuBar();
@@ -28,6 +28,8 @@ final class EditorFrame extends JFrame implements MouseListener, KeyListener, Mo
   private JMenuItem menuItem = new JMenuItem("Save");
   static String text;
   
+  JButton btnSave = new JButton("Save");
+  JButton btnLoad = new JButton("Load");
 
   
   public EditorFrame(int breite, int hoehe) {
@@ -35,8 +37,12 @@ final class EditorFrame extends JFrame implements MouseListener, KeyListener, Mo
     fensterEinmitten(breite, hoehe);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setVisible(true);
-    JButton a = new JButton("click me");
-    JButton b = new JButton("test button");
+    
+    addMouseListener(this);
+    addKeyListener(this);
+    addMouseMotionListener(this);
+  
+  /*
     add(m);
     m.add(menu);
     menu.add(menuItem);
@@ -51,23 +57,31 @@ final class EditorFrame extends JFrame implements MouseListener, KeyListener, Mo
     
     t.setPreferredSize(new Dimension(breite, 40));
     
-    ActionListener test = new ActionListener() {
+    // Save Button
+    btnSave.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			editorControl.figurenSpeichern();
 			
 		}
-	};
-	
-    t.add(a);
-    t.add(b);
+	});
+    
+    btnLoad.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			editorControl.figurenLaden();
+			
+		}
+	});
+  
+    t.add(btnSave);
+    t.add(btnLoad);
     t.setFloatable(false);
     t.setRollover(true);
     this.add(t);
-    addMouseListener(this);
-    addKeyListener(this);
-    addMouseMotionListener(this);
+*/
     
 
     
@@ -110,7 +124,6 @@ public void mouseDragged(MouseEvent event) {
 
 }
 
-@Override
 public void keyPressed(KeyEvent e) {
 	editorControl.setFigurTyp(e.getKeyChar());
 

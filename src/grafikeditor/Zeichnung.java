@@ -9,6 +9,10 @@ public class Zeichnung {
 	//private Figur[] figuren;
 	private List<Figur> figuren = new ArrayList<Figur>();
 	private Figur selectedFigur;
+	
+	public Zeichnung() {
+		
+	}
 
 	
 	

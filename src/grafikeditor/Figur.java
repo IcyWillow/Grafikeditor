@@ -11,6 +11,8 @@ public abstract class Figur {
 		this.y = y;
 	}
 	
+
+	
 	public int getX() {
 		return this.x;
 	}

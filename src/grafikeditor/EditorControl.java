@@ -6,6 +6,7 @@ final class EditorControl {
   private Zeichnung zeichnung = new Zeichnung();
   private char figurTyp = 'r';
   private Point ersterPunkt;
+  private FileManager fm = new FileManager();
   Figur p;
   
 
@@ -97,6 +98,17 @@ final class EditorControl {
 	  } else {
 		  p.resize(x, y, w, h);
 	  }
+
+  }
+  
+  public void figurenSpeichern() {
+	  fm.save(zeichnung);
+	  
+  }
+  
+  public void figurenLaden() {
+	  
+	  zeichnung = fm.load();
 
   }
 }
