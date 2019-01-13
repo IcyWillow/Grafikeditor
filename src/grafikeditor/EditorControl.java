@@ -111,5 +111,10 @@ final class EditorControl {
 	  zeichnung = fm.load();
 
   }
+  
+  public void figurenLoeschen() {
+	  
+	  zeichnung.entfernen();
+  }
 }
 

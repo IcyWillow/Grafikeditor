@@ -1,7 +1,8 @@
 package grafikeditor;
 import java.awt.Graphics;
+import java.io.Serializable;
 
-public abstract class Figur {
+public abstract class Figur implements Serializable {
 
 	protected int x;
 	protected int y;

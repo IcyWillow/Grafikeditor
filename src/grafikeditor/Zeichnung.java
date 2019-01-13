@@ -1,10 +1,11 @@
 package grafikeditor;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Zeichnung {
+public class Zeichnung implements Serializable {
 	
 	//private Figur[] figuren;
 	private List<Figur> figuren = new ArrayList<Figur>();

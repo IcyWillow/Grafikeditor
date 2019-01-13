@@ -1,5 +1,6 @@
 package grafikeditor;
 import java.awt.Dimension;
+import java.awt.List;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -30,6 +31,8 @@ final class EditorFrame extends JFrame implements MouseListener, MouseMotionList
   
   JButton btnSave = new JButton("Save");
   JButton btnLoad = new JButton("Load");
+  JButton btnClean = new JButton("Clean");
+
 
   
   public EditorFrame(int breite, int hoehe) {
@@ -41,8 +44,12 @@ final class EditorFrame extends JFrame implements MouseListener, MouseMotionList
     addMouseListener(this);
     addKeyListener(this);
     addMouseMotionListener(this);
+    
+    btnSave.setFocusable(false);
+    btnLoad.setFocusable(false);
+    btnClean.setFocusable(false);
+ 
   
-  /*
     add(m);
     m.add(menu);
     menu.add(menuItem);
@@ -72,19 +79,27 @@ final class EditorFrame extends JFrame implements MouseListener, MouseMotionList
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			editorControl.figurenLaden();
+			repaint();
 			
 		}
 	});
+    
+    btnClean.addActionListener(new ActionListener() {
+		
+  		@Override
+  		public void actionPerformed(ActionEvent e) {
+  			editorControl.figurenLoeschen();
+  			repaint();
+  			
+  		}
+  	});
   
     t.add(btnSave);
     t.add(btnLoad);
+    t.add(btnClean);
     t.setFloatable(false);
     t.setRollover(true);
-    this.add(t);
-*/
-    
-
-    
+    this.add(t);    
   }
 
   private void erzeugeUndSetzeEditorPanel() {

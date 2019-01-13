@@ -2,49 +2,67 @@ package grafikeditor;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import com.google.gson.Gson;
+
+
+
+
 
 public class FileManager {
 
-	private Gson gson = new Gson();
-	
-	public void save(Zeichnung z) {
-		String s = gson.toJson(z);
 
-		    try {
-				BufferedWriter writer = new BufferedWriter(new FileWriter("figuren.txt"));
-				writer.write(s);
-			    writer.close();		
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		     
+
+	public void save(Zeichnung z) {
 		
+		
+	
+		try {
+			FileOutputStream f = new FileOutputStream(new File("zeichnung.txt"));
+			ObjectOutputStream o = new ObjectOutputStream(f);
+			
+			o.writeObject(z);
+			o.close();
+			f.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
 	}
 	
 	public Zeichnung load() {
 		
-		 String s = ""; 
-	
+		Zeichnung z = new Zeichnung();
 		
-		 
+		try {
+			FileInputStream  f = new FileInputStream(new File("zeichnung.txt"));
+			ObjectInputStream  o = new ObjectInputStream(f);
+			
 		    try {
-				s = new String(Files.readAllBytes(Paths.get("figuren.txt")));   		 
-			} catch (IOException e) {
+				z = (Zeichnung) o.readObject();
+			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		    
-		 
-		    Zeichnung z = gson.fromJson(s, Zeichnung.class);	
-		    return z;
-		    
+			o.close();
+			f.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return z;
+
 	}
 	
 }
