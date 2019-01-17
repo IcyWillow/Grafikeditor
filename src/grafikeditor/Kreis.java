@@ -29,5 +29,10 @@ public class Kreis extends Figur {
 		
 	}
 
+	public String whoAmI() {
+		// TODO Auto-generated method stub
+		return "Kreis " + this.x + " " + this.y + " " + this.radius;
+	}
+
 
 }

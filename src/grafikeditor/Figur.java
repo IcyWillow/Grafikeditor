@@ -31,6 +31,7 @@ public abstract class Figur implements Serializable {
 	public abstract void zeichne(Graphics g);
 	
 	public abstract void resize(int x, int y, int w, int h);
-
+	
+	public abstract String whoAmI();
 
 }

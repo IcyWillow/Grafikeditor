@@ -35,5 +35,11 @@ public class Rechteck extends Figur {
 	g.drawRect(x, y, breite, hoehe);
 		
 	}
+	
+	public String whoAmI() {
+		// TODO Auto-generated method stub
+		return "Rechteck " + this.x + " " + this.y + " " + this.hoehe + " " + this.breite;
+	}
+
 
 }

@@ -40,5 +40,10 @@ public class Linie extends Figur {
 		this.endeY = y;
 		
 	}
+	
+	public String whoAmI() {
+		// TODO Auto-generated method stub
+		return "Linie " + this.x + " " + this.y + " " + this.endeX + " " + this.endeY;
+	}
 
 }

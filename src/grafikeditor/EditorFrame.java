@@ -32,6 +32,9 @@ final class EditorFrame extends JFrame implements MouseListener, MouseMotionList
   JButton btnSave = new JButton("Save");
   JButton btnLoad = new JButton("Load");
   JButton btnClean = new JButton("Clean");
+  JButton btnTest1 = new JButton("Test1");
+  JButton btnTest2 = new JButton("Test2");
+  JButton btnTest3 = new JButton("Test3");
 
 
   
@@ -48,6 +51,7 @@ final class EditorFrame extends JFrame implements MouseListener, MouseMotionList
     btnSave.setFocusable(false);
     btnLoad.setFocusable(false);
     btnClean.setFocusable(false);
+    btnTest1.setFocusable(false);
  
   
     add(m);

@@ -26,5 +26,11 @@ public class Text extends Figur {
 	public void resize(int x, int y, int w, int h) {
 	
 	}
+
+	@Override
+	public String whoAmI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
